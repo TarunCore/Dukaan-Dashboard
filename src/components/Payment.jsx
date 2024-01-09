@@ -1,3 +1,4 @@
+import BSearch from  "../assets/payment/bsearch.png"
 import Drop from "../assets/payment/drop.png"
 import Sort from "../assets/payment/sort.png"
 import Download from "../assets/payment/download.png"
@@ -20,13 +21,19 @@ function Payment(){
                     <p>2,31,23,23</p>
                 </div>
             </div>
-            <span className="titles">Transactions | This Month</span>
+            <span className="titles" style={{marginTop:"20px", display:"inline-block"}}>Transactions | This Month</span>
             <div className="transactionTable">
                 <div style={{display:"flex",justifyContent:"space-between"}}>
-                    <input type="text" placeholder="Search by order Id.."/>
+                    <div className="transactionSearch">
+                        <div style={{display:"flex", alignItems:"center"}}>
+                            <img src={BSearch} alt="" />
+                        </div>
+                        <input type="text" placeholder="Search by order Id.."/>
+
+                    </div>
                     <div>
-                    <button style={{fontFamily:"Inter"}}>Sort<img src={Sort} alt="" style={{width:"16px"}}/></button>
-                    <button style={{fontFamily:"Inter"}}><img src={Download} alt="" style={{width:"16px"}}/></button>
+                    <button style={{fontFamily:"Inter", borderRadius:"4px"}}><div style={{display:"flex",alignItems:"center"}}>Sort <img src={Sort} alt="" style={{width:"16px"}}/></div> </button>
+                    <button style={{fontFamily:"Inter", borderRadius:"4px", marginLeft:"10px"}}><img src={Download} alt="" style={{width:"13px"}}/></button>
                     </div>
                 </div>
                 <table>

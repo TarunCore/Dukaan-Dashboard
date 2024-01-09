@@ -13,9 +13,11 @@ import Discounts from "../assets/navbar/discounts.png"
 import Audience from "../assets/navbar/audience.png"
 import Appearence from "../assets/navbar/appearence.png"
 import Plugins from "../assets/navbar/plugins.png"
+import Wallet from "../assets/navbar/wallet.png"
 function NavBar(){
     return (
         <div className="navbar" >
+            <div>
             <div className="profile">
                 <img src={Company} alt=""/>
                 <div className="navNames">
@@ -39,7 +41,16 @@ function NavBar(){
             <NavItem Logo={Audience} item="Audience" />
             <NavItem Logo={Appearence} item="Appearance" />
             <NavItem Logo={Plugins} item="Plugins" />
-
+            </div>
+            <div >
+                <div className="balance">
+                    <img src={Wallet} alt="" />
+                    <div >
+                        <span style={{opacity:"0.8", fontSize:"13px"}}>Available Credits</span>
+                        <span style={{fontSize:"16px"}}>221.0</span>
+                    </div>
+                </div>
+            </div>
         </div>
     )
 

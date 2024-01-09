@@ -1,6 +1,12 @@
 
 @mixin mobile {
-    @media screen and (max-width: 480px) {
+    @media screen and (max-width: 500px) {
+        @content;
+        
+    }
+}
+@mixin half {
+    @media screen and (max-width: 880px) {
         @content;
         
     }
@@ -22,7 +28,17 @@
         justify-content: space-between;
         align-items: center;
         padding: 12px 32px 12px 32px;
+        .how{
+            display: flex;
+            align-items: center;
+            @include half{
+                display: none;
+                visibility: collapse; 
+            }
+        }
         span{
+            display: inline-block;
+            margin-right: 10px;
         }
         .searchTop{
             background-color: #F2F2F2;
@@ -39,26 +55,11 @@
             border-radius: 6px;
             background-color: #F2F2F2;
             @include mobile{
-                width: 150px;
+                width: 120px;
                 margin: 0 5px 0 5px;
             }
         }
-        // input{
-        //     font-family: "Inter", sans-serif;
-        //     width: 400px;
-        //     padding: 9px 16px 9px 16px;
-            
-        //     border-radius: 6px;
-        //     gap: 8px;
-        //     border: none;
-        //     outline: none;
-        //     border-radius: 6px;
-        //     background-color: #F2F2F2;
-        //     @include mobile{
-        //         width: 200px;
-        //         margin: 0 5px 0 5px;
-        //     }
-        // }
+    
         div{
             display: flex;
             // align-items: center;
@@ -78,7 +79,9 @@
             button:hover{
                 background-color: #dbdbdb;
             }
+            
         }
+        
         
     }
 }
@@ -91,6 +94,9 @@
     // height: 100%;
     min-width: 225px;
     padding: 10px 5px 10px 5px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
     @include mobile{
         // width: 10px;
         min-width: 45px;
@@ -151,7 +157,27 @@
         border-radius: 4px;
         background-color: rgba($color: #FFFFFF, $alpha: 0.1);
     }
-    
+    .balance{
+        color: #f2f2f2;
+        background-color: #353c53;
+        display: flex;
+        padding: 6px 12px;
+        align-items: center;
+        gap: 12px;
+        margin: 10px;
+        img{
+            width: 24px;
+            height: 24px;
+        }
+        div{
+            display: flex;
+            flex-direction: column;
+
+        }
+        @include mobile{
+            visibility: collapse;
+        }
+    }
     
 }
 
@@ -167,6 +193,7 @@
         background-color: #FFFFFF;
         outline: none;
         padding: 7px;
+        font-size: 14px;
         border: 1px solid #D9D9D9;
     }
     button:hover{
@@ -183,11 +210,33 @@
     .transactionTable{
         padding: 12px 12px;
         background-color: #FFFFFF;
+        .transactionSearch{
+            border: 1px solid #d9d9d9;
+            border-radius: 4px;
+            padding: 10px 16px;
+            display: flex;
+            input{
+                outline: none;
+                border: none;
+                font-size: 14px;
+                
+                font-family: 'Inter', sans-serif;
+                @include mobile{
+                    width: 150px;
+                }
+            }
+            img{
+                width: 14px;
+                height: 14px;
+                margin-right: 7px;
+            }
+        }
         table{
             width: 100%;
             text-align: center;
             font-size: 14px;
             border: 4px;
+            margin-top: 10px;
             thead{
                 background-color: #f2f2f2;
                 color: #4d4d4d;
