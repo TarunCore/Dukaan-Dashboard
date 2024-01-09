@@ -21,12 +21,12 @@ function NavBar(){
             <div className="profile">
                 <img src={Company} alt=""/>
                 <div className="navNames">
-                <div style={{display:"flex",flexDirection:"column"}}>
+                <div style={{display:"flex",flexDirection:"column", marginLeft:"7px"}}>
                         <span>Nishan</span>
-                        <u style={{fontWeight:300}}>Visit Store</u>
+                        <u style={{fontWeight:300, fontSize:"14px"}}>Visit Store</u>
                         {/* <span>Visit Store</span> */}
                     </div>
-                <img src={DropDown} alt="" style={{width:"20px",height:"20px"}}/>
+                <img src={DropDown} alt="" style={{width:"20px",height:"20px", textAlign:"center"}}/>
                 </div>
             </div>
             <NavItem Logo={Home} item="Home"></NavItem>
@@ -35,7 +35,7 @@ function NavBar(){
             <NavItem Logo={Delivery} item="Delivery" />
             <NavItem Logo={Marketing} item="Marketing" />
             <NavItem Logo={Analytics} item="Analytics" />
-            <NavItem Logo={Payments} item="Payments" />
+            <NavItem Logo={Payments} item="Payments" open={true}/>
             <NavItem Logo={Tools} item="Tools" />
             <NavItem Logo={Discounts} item="Discounts" />
             <NavItem Logo={Audience} item="Audience" />
@@ -47,7 +47,7 @@ function NavBar(){
                     <img src={Wallet} alt="" />
                     <div >
                         <span style={{opacity:"0.8", fontSize:"13px"}}>Available Credits</span>
-                        <span style={{fontSize:"16px"}}>221.0</span>
+                        <span style={{fontSize:"16px"}}>222.10</span>
                     </div>
                 </div>
             </div>
@@ -58,7 +58,7 @@ function NavBar(){
 
 function NavItem({Logo, item}){
     return(
-        <div className="navItem">
+        <div className={`navItem ${item=="Payments" && "open"}`}>
             <img src={Logo} alt=""/>
             <span className="navNames">{item}</span>
         </div>

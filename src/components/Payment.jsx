@@ -13,12 +13,12 @@ function Payment(){
             </div>
             <div className="overview" style={{display:"flex", justifyContent:"space-between", flexWrap:"wrap"}}>
                 <div style={{width:"48%", backgroundColor:"white"}}>
-                    <p>Online Orders</p>
-                    <p>231</p>
+                    <p className="amountHeading">Online Orders</p>
+                    <p className="amount">231</p>
                 </div>
                 <div style={{width:"48%"}}>
-                    <p>Amount Recieved</p>
-                    <p>2,31,23,23</p>
+                    <p className="amountHeading">Amount Recieved</p>
+                    <p className="amount">₹23,92,312.19</p>
                 </div>
             </div>
             <span className="titles" style={{marginTop:"20px", display:"inline-block"}}>Transactions | This Month</span>
@@ -64,6 +64,23 @@ function Payment(){
                         <TableRow></TableRow>   
                     </tbody>
                 </table>
+                <div className="pagination">
+                    <button>Previous</button>
+                    <ul>
+                        <li>1</li>
+                        <li>...</li>
+                        <li className="currentPage">10</li>
+                        <li>11</li>
+                        <li>12</li>
+                        <li>13</li>
+                        <li>14</li>
+                        <li>15</li>
+                        <li>16</li>
+                        <li>17</li>
+                        <li>18</li>
+                    </ul>
+                    <button>Next</button>
+                </div>
             </div>
         </div>
     )

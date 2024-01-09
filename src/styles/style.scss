@@ -107,23 +107,26 @@
         color: white;
         align-items: center;
         justify-content: space-evenly;
+        margin:0 20px;
         img{
             width: 50px;
             height: 50px;
+            border-radius: 4px;
         }
         @include mobile{
             justify-content: flex-start;
-
+            margin:0 0;
             img{
                width: 25px;
                height: 25px; 
-               margin-left: 4px;
+               margin-left: 5px;
             }
         }
         .navNames{
             display: flex;
             justify-content: space-between;
-            // width: 100%;
+            width: 100%;
+            
             @include mobile{
                 visibility: collapse;
             }
@@ -151,6 +154,9 @@
             @include mobile{
                 margin: 0 7px;
             }
+        }
+        &.open{
+            background-color: rgba($color: #FFFFFF, $alpha: 0.1);
         }
     }
     .navItem:hover{
@@ -202,9 +208,31 @@
     .overview{
         margin-top: 20px;
         div{
-            padding: 10px;
+            padding: 20px;
             background-color: white;
             box-shadow: 0px 2px 6px rgba(26, 24, 30, 0.04);
+            .amountHeading{
+                color: #4d4d4d;
+                font-size: 16px;
+
+            }
+            .amount{
+                color: #1a181e;
+                font-size: 32px;
+                margin: 0 0;
+                font-weight: 500;
+                
+            }
+            @include mobile(){
+                padding: 20px;
+                .amountHeading{
+                    font-size: 14px;
+    
+                }
+                .amount{
+                    font-size: 16px; 
+                }
+            }
         }
     }
     .transactionTable{
@@ -237,6 +265,7 @@
             font-size: 14px;
             border: 4px;
             margin-top: 10px;
+            border-collapse: collapse;
             thead{
                 background-color: #f2f2f2;
                 color: #4d4d4d;
@@ -249,6 +278,44 @@
                     padding: 12px 12px;
                 }
             }
+        }
+        .pagination{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 4px;
+            ul{
+                list-style: none;
+                margin: 20px 30px;
+                padding: 0;
+                li{
+                    display: inline-block;
+                    margin: 0 10px 0 0;
+                    width: 30px;
+                    height: 30px;
+                    font-size: 14px;
+                    cursor: pointer;
+                    border-radius: 4px;
+                    padding-top: 5px;
+                    text-align: center;
+                    &.currentPage{
+                        color: white;
+                        background-color: #146eb4;
+                        &:hover{
+                            background-color: #146eb4;
+                        }
+                    }
+                    &:hover{
+                        background-color: #f5f5f5;
+                    }
+                }
+                @include mobile {
+                    li:nth-last-child(-n+8) {
+                        display: none;
+                    }
+                }
+            }
+            
         }
     }
 }
